@@ -110,12 +110,45 @@ Inside this funciton, we use if..else or we can use Switch case to identify the 
         }
     }
 
+### Configure redux store
+
+For creating a redux store we have a function in the redux library called createStore and we have to just pass our Root reducer as a parameter
+
+    import {legacy_createstore as createstore} from "redux";
+    import reducer from "./tasks.js";
+
+    const store = createStore(reducer);
+    export default store;
+
+### Dispatch action from store
+
+For dispatching any action, we have to use store.dispatch method and then we pass our action object with type property (which is the action name) and payload property (in which we can pass data to action)
+
+    store.dispatch({type:"ADD_TASK",payload:{task:"Add new task"}});
+
+### Subscribe and unsubscribe method
+
+As we use Subscirbe feature on Youtub, store.subscribe method is also used to get notified when we have something change in our store object.
+
+    store.subscribe(()=>{
+        console.log("Updated",sore.getState())
+    })
+
+This callback function will run on every change on the redux store.
+
+Now if we want to stop this subscribe method we have to use unscribe.
+
+    const unsubscribe = store.subscribe(()=>{
+        console.log("Updated",store.getState())
+    });
+    unsubscribe();
+
 # What is Thunk?
 
 -> In programming term, thunk is "a piece of code that does some delay work".
 Rather than run the logic now, we can write code that can be used to peform the work later.
 
-    For example, we want to fetch data from API, and after fetching data we can store into Redux Store.
+For example, we want to fetch data from API, and after fetching data we can store into Redux Store.
 
 **_What if we simply add async to action creater?_**
 
@@ -123,3 +156,10 @@ When we add async to action creater, we get error : Actions must be plain object
 So, redux thunk will allow actions to return function instead of returning plain objects.
 
 In simple, using Redux-Thunk middleware, we can write asynchronous/complex logic in Redux.
+
+    import {legacy_createStore as createStore, applyMiddleware} from "redux";
+    import thunk form "redux-thunk";
+    import reducer from "./tasks.js"
+
+    const store = createStore(reducer,applyMidlleware(thunk));
+    export default store;
