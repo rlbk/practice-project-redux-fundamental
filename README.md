@@ -62,7 +62,7 @@ So, there are only three main things about Redux
 
 -> Store => Keep data in single place
 
-**Example**
+### **_Example_**
 
 #### In todo application,
 
