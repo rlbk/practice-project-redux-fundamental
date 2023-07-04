@@ -80,3 +80,5 @@ will help us to easily debug our application.
 -> List our actions (What to do)
 
 -> Create reducer function (How to do)
+
+-> Create redux store
