@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import store from "./store/store";
+import { addTask, completedTask, removeTask } from "./store/task";
 
 function App() {
+  store.subscribe(() => {
+    console.log("Updated", store.getState());
+  });
+  store.dispatch(addTask("Task 1"));
+  store.dispatch(addTask("Task 2"));
+  console.log(store.getState(), "@store");
+  store.dispatch(completedTask(1));
+  console.log(store.getState(), "@update");
+  store.dispatch(removeTask(1));
+  console.log(store.getState(), "@store after remove");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Redux Fundmental</h1>
     </div>
   );
 }

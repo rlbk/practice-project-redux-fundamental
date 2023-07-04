@@ -82,3 +82,10 @@ will help us to easily debug our application.
 -> Create reducer function (How to do)
 
 -> Create redux store
+
+# What is Thunk?
+
+-> In programming term, thunk is "a piece of code that does some delay work".
+Rather than run the logic now, we can write code that can be used to peform the work later.
+
+    For example, we want to fetch data from API, and after fetching data we can store into Redux Store.
