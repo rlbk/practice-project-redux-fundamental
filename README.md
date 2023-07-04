@@ -56,9 +56,9 @@ Redux is the most popular tool for state management. We can use Redux with React
 
 So, there are only three main things about Redux
 
--> Actions => What to do
+-> Actions - which will define which task we want to perform (What to do)
 
--> Reducers => How to do
+-> Reducers - function which will add, update and delte data (How to do)
 
 -> Store => Keep data in single place
 
@@ -82,6 +82,33 @@ will help us to easily debug our application.
 -> Create reducer function (How to do)
 
 -> Create redux store
+
+### Creating Reducer Function:
+
+A reducer is a pure function that takes two arguments. The first one is the initial or Current state and the second one is the action object.
+
+Inside this funciton, we use if..else or we can use Switch case to identify the action type.
+
+    let id = 0;
+    export default funcito reducer(state=[],action){
+        switch (action.type){
+            case ADD_TASK:
+                return [
+                    ...state,
+                    {
+                        id:++id,
+                        task:action.payload.task,
+                        completed: false
+                    }
+                ];
+            case REMOVE_TASK:
+                return state.filter(task=> task.id !== action.payload.id)
+            case TASK_COMPLETED:
+                return state.map(task=> task.id === action.payload.id ? { ...task,completed:true}:task);
+            default:
+                return state;
+        }
+    }
 
 # What is Thunk?
 
