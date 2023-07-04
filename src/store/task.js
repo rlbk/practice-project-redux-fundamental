@@ -4,7 +4,7 @@ const REMOVE_TASK = "REMOVE_TASK";
 const TASK_COMPLETED = "TASK_COMPLETED";
 
 // actions
-export const addTask = async (task) => {
+export const addTask = (task) => {
   return { type: ADD_TASK, payload: { task } };
 };
 
@@ -14,6 +14,12 @@ export const removeTask = (id) => {
 
 export const completedTask = (id) => {
   return { type: TASK_COMPLETED, payload: { id } };
+};
+
+export const fetchTodo = () => async (dispatch) => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const task = await response.json();
+  dispatch(addTask(task.title));
 };
 
 //reducers
