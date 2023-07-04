@@ -90,7 +90,8 @@ Rather than run the logic now, we can write code that can be used to peform the 
 
     For example, we want to fetch data from API, and after fetching data we can store into Redux Store.
 
-**_Wha if we simply add async to action creater?_**
+**_What if we simply add async to action creater?_**
+
 When we add async to action creater, we get error : Actions must be plain objects.
 So, redux thunk will allow actions to return function instead of returning plain objects.
 
