@@ -4,7 +4,7 @@ const REMOVE_TASK = "REMOVE_TASK";
 const TASK_COMPLETED = "TASK_COMPLETED";
 
 // actions
-export const addTask = (task) => {
+export const addTask = async (task) => {
   return { type: ADD_TASK, payload: { task } };
 };
 

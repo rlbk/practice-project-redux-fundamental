@@ -89,3 +89,5 @@ will help us to easily debug our application.
 Rather than run the logic now, we can write code that can be used to peform the work later.
 
     For example, we want to fetch data from API, and after fetching data we can store into Redux Store.
+
+    ***Wha if we simply add async to action creater?***
