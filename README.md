@@ -1,14 +1,14 @@
-**_ Notes Summary from the Udemy Course : The Ultimate Redux Course 2023 - [LATEST Redux-toolkit] _**
+**_* Notes Summary from the Udemy Course : The Ultimate Redux Course 2023 - [LATEST Redux-toolkit] *_**
 
 Link :- https://www.udemy.com/course/the-ultimate-redux-course-state-management-library/
 
-### What is Redux ?
+# What is Redux ?
 
 -> Redux is a state management library for JavaScript applicatons
 
 -> In other words, redux is used to manage the data or state of complex JavaScript applications.
 
-### State Management Tools
+# State Management Tools
 
 -> Flux
 
@@ -38,7 +38,7 @@ Link :- https://www.udemy.com/course/the-ultimate-redux-course-state-management-
 
 -> Simple UI & static data
 
-### How Redux works?
+# How Redux works?
 
 -> We use redux for managing the state of web application specifically, which have little complex UI structure. In Redux, we store our applications all state in a single object called store. So when some component needs a data of particular thing, then we get that satat from the single place, which is store.
 
@@ -62,9 +62,9 @@ So, there are only three main things about Redux
 
 -> Store => Keep data in single place
 
-**_ Example _**
+**_* Example *_**
 
-# In todo application,
+#### In todo application,
 
 When user add a new task, which means user dispatch an action to the Redux store, then redux store pass that action to its reducer. Now reducer perfom the action and then update the store values according to this action.
 
